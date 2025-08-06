@@ -1,0 +1,33 @@
+{
+  "name": "doordash-meal-suggestion-agent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "start": "mastra start"
+  },
+  "keywords": ["doordash", "food", "meal-suggestion", "ai-agent", "mastra"],
+  "author": "",
+  "license": "ISC",
+  "description": "An AI-powered meal suggestion agent that recommends DoorDash restaurants and dishes based on user preferences and location",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@mastra/core": "^0.10.2",
+    "@mastra/deployer-vercel": "^0.10.3",
+    "@mastra/libsql": "^0.10.1",
+    "@mastra/loggers": "^0.10.1",
+    "@mastra/memory": "^0.10.2",
+    "@openrouter/ai-sdk-provider": "^0.7.0",
+    "zod": "^3.25.51"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "mastra": "^0.10.2",
+    "typescript": "^5.8.3"
+  }
+}
