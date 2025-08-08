@@ -57,7 +57,7 @@ This project uses a sophisticated multi-agent system built with Mastra:
    Edit `.env` and add your API keys:
    ```env
    OPENROUTER_API_KEY=your-openrouter-api-key
-   EXA_API_KEY=your-exa-api-key
+   EXA_API_KEY=your-exa-api-key ( OPTIONAL )
    ```
 
 4. **Start the development server**
@@ -77,7 +77,7 @@ This project uses a sophisticated multi-agent system built with Mastra:
 | Variable | Description | Required |
 |----------|-------------|----------|
 | `OPENROUTER_API_KEY` | API key for OpenRouter (Claude Sonnet 4) | Yes |
-| `EXA_API_KEY` | API key for Exa search service | Yes |
+| `EXA_API_KEY` | API key for Exa search service ( OPTIONAL ) | Yes |
 
 ## 📖 Usage
 
