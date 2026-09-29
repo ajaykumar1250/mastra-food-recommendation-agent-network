@@ -57,6 +57,7 @@ This project uses a sophisticated multi-agent system built with Mastra:
    Edit `.env` and add your API keys:
    ```env
    OPENROUTER_API_KEY=your-openrouter-api-key
+   OPENTRIPMAP_API_KEY=your-opentripmap-api-key
    EXA_API_KEY=your-exa-api-key ( OPTIONAL )
    ```
 
@@ -70,6 +71,7 @@ This project uses a sophisticated multi-agent system built with Mastra:
 ### API Keys Required
 
 - **OpenRouter API Key**: For AI model access (Claude Sonnet 4)
+- **OpenTripMap API Key**: For nearby restaurant search (free key at [dev.opentripmap.org](https://dev.opentripmap.org/register))
 - **Exa API Key**: For web search and restaurant data
 
 ### Environment Variables
@@ -77,6 +79,7 @@ This project uses a sophisticated multi-agent system built with Mastra:
 | Variable | Description | Required |
 |----------|-------------|----------|
 | `OPENROUTER_API_KEY` | API key for OpenRouter (Claude Sonnet 4) | Yes |
+| `OPENTRIPMAP_API_KEY` | API key for OpenTripMap restaurant search | Yes |
 | `EXA_API_KEY` | API key for Exa search service ( OPTIONAL ) | Yes |
 
 ## 📖 Usage

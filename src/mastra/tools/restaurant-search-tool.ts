@@ -97,8 +97,10 @@ const getOpenTripMapRestaurants = async (params: {
     const radius = 10000; // 10km radius (increased for better coverage)
     const limit = 50; // Increased limit
     
-    // Use a valid API key or get one from OpenTripMap
-    const apiKey = '5ae2e3f221c38a28845f05b66d45696fd7691176373e5e47a6a34b0b';
+    const apiKey = process.env.OPENTRIPMAP_API_KEY;
+    if (!apiKey) {
+      throw new Error('OPENTRIPMAP_API_KEY is not set. Add it to your .env file (see env.example).');
+    }
     
     let url = `https://api.opentripmap.com/0.1/en/places/radius?radius=${radius}&lon=${params.longitude}&lat=${params.latitude}&limit=${limit}&apikey=${apiKey}`;
     
@@ -106,6 +108,10 @@ const getOpenTripMapRestaurants = async (params: {
     url += '&kinds=restaurants';
 
     const response = await fetch(url);
+    // Surface a missing/revoked key instead of falling through to "No restaurants found"
+    if (response.status === 401 || response.status === 403) {
+      throw new Error(`OpenTripMap rejected OPENTRIPMAP_API_KEY (HTTP ${response.status}). Check that it is set to a current key.`);
+    }
     const data = await response.json();
 
     console.log('OpenTripMap API Response:', {
